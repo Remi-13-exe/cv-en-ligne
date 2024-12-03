@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Style global */
-
 body {
+    width: 1160px; /* Largeur fixe pour centrer tout le contenu */
     line-height: 1.6; /* Améliore la lisibilité */
-    margin: 0;
+    margin: 0 auto; /* Centre horizontalement le contenu */
     padding: 0;
     background-color: #f4f4f9; /* Couleur de fond claire */
     color: #333; /* Couleur de texte principale */
@@ -16,17 +16,19 @@ body {
 h1, h2 {
     font-family: 'Raleway', sans-serif; /* Police spécifique pour les titres */
     font-weight: 700; /* Style gras pour les titres */
-    margin: 0; /* Évite les marges externes superflues */
+    margin: 0; /* Supprime les marges par défaut */
 }
 
 h2 {
     color: #17abb3; /* Couleur spécifique pour les sous-titres */
-    margin-top: 45px;
-    border-bottom: 2px solid #e3e3e3;  /* barre fine sous le h2 */
-    padding-bottom: 5px;  /* espace entre le texte et la barre */
+    margin-top: 45px; /* Espace avant le titre */
+    border-bottom: 2px solid #e3e3e3; /* Barre fine sous le titre */
+    padding-bottom: 5px; /* Espace entre le texte et la barre */
 }
 
+/* Header principal avec position relative */
 header {
+    position: relative; /* Pour permettre l'utilisation de position absolute sur l'image */
     background-color: #17abb3;
     color: white;
     padding: 20px;
@@ -36,58 +38,68 @@ header {
     align-items: center;
 }
 
-header .contact-info {
-    display: flex;
-    flex-wrap: wrap; /* Permet de faire passer les éléments à la ligne suivante si nécessaire */
-    gap: 20px; /* Espace entre les éléments */
-    justify-content: center; /* Centrer horizontalement les éléments */
-    margin-top: 10px;
-    width: 100%; /* Occupe toute la largeur du header */
-    max-width: 600px; /* Max largeur pour éviter que le texte soit trop étiré */
-}
-
-header .contact-item {
+/* Conteneur de l'image et du texte */
+.header-content {
     display: flex;
     align-items: center;
-    gap: 10px;
-    flex-basis: 45%; /* Chaque élément occupe 45% de la largeur du parent */
-    justify-content: flex-start; /* Assure que l'icône et le texte sont alignés à gauche */
+    gap: 15px;
+    justify-content: flex-start;
+    position: relative; /* Conteneur principal, positionné relatif pour l'image absolue */
 }
 
-header .contact-item i {
-    font-size: 20px;
-    color: white;
+/* Image de profil avec positionnement absolu */
+.profile-pic {
+    position: absolute; /* Permet de sortir de l'alignement normal et de la déplacer à gauche */
+    margin-left: -300px; /* Déplace l'image vers la gauche du conteneur */
+    top: 50%; /* Positionne l'image verticalement au centre du conteneur */
+    transform: translateY(-50%); /* Ajuste pour centrer parfaitement l'image */
+    width: 100px; /* Taille de l'image */
+    height: 100px; /* Taille de l'image */
+    border-radius: 50%; /* Bordures arrondies pour l'effet rond */
+    border: 4px solid #17abb3; /* Bordure colorée autour de l'image */
+    object-fit: cover; /* Assure que l'image est bien redimensionnée sans déformation */
 }
 
+/* Contenu textuel du header */
+.text-content {
+    text-align: left;
+    margin-left: 120px; /* Décale le texte pour éviter qu'il soit caché par l'image */
+}
 
-
-
-
+/* Information de contact */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
+}
 
 
 /* Conteneur principal */
 .container {
-    display: flex; /* Flexbox pour aligner les colonnes */
-    justify-content: space-between; /* Espacement entre les colonnes */
+    display: flex; /* Flexbox pour créer deux colonnes */
+    justify-content: space-between; /* Espace entre les colonnes */
 }
 
 /* Colonne gauche */
 .left-column {
     width: 30%; /* Largeur de la colonne gauche */
     background-color: #f5f5f5; /* Fond gris clair */
-    border-radius: 8px; /* Coins arrondis */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
     padding: 20px; /* Ajout de padding pour espacer le contenu */
 }
 
 #competences ul, #langues ul {
-    list-style-type: none; /* Suppression des puces */
+    list-style-type: none; /* Supprime les puces des listes */
     padding: 0; /* Pas de marge intérieure */
 }
 
 .stars {
-    color: #17abb3; /* Couleur spécifique pour les étoiles */
-    font-weight: bold; /* Gras pour les étoiles */
+    color: #17abb3; /* Couleur des étoiles */
+    font-weight: bold; /* Texte en gras */
 }
 
 /* Colonne droite */
@@ -95,25 +107,21 @@ header .contact-item i {
     width: 70%; /* Largeur de la colonne droite */
     padding: 20px; /* Espacement interne */
     background-color: #ffffff; /* Fond blanc clair */
-    border-radius: 8px; /* Coins arrondis */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
 }
 
 /* Pied de page */
 footer {
+    width: calc(1160px - 20px); /* Largeur totale moins le padding */
+    padding: 10px; /* Gardez un padding cohérent */
+    margin: 0 auto;
     text-align: center;
-    padding: 10px;
-    background-color: #17abb3; /* Couleur principale */
-    color: white; /* Texte blanc */
-    position: fixed; /* Fixé en bas de l'écran */
-    bottom: 0;
-    width: 100%;
+    background-color: #17abb3;
+    color: white;
 }
 
 
-
+/* Sections */
 section {
-    margin-bottom: 20px; /* Ajout d'espace à la fin des sections */
+    margin-bottom: 20px; /* Ajoute un espace entre les sections */
 }
-
-
