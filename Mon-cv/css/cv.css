@@ -19,6 +19,12 @@ h1, h2 {
     margin: 0; /* Supprime les marges par défaut */
 }
 
+
+h1 {
+    font-size: 60px;
+
+}
+
 h2 {
     color: #17abb3; /* Couleur spécifique pour les sous-titres */
     margin-top: 45px; /* Espace avant le titre */
@@ -38,6 +44,10 @@ header {
     align-items: center;
 }
 
+header p {
+    font-size: 40px;
+}
+
 /* Conteneur de l'image et du texte */
 .header-content {
     display: flex;
@@ -50,13 +60,13 @@ header {
 /* Image de profil avec positionnement absolu */
 .profile-pic {
     position: absolute; /* Permet de sortir de l'alignement normal et de la déplacer à gauche */
-    margin-left: -300px; /* Déplace l'image vers la gauche du conteneur */
+    margin-left: -200px; /* Déplace l'image vers la gauche du conteneur */
     top: 50%; /* Positionne l'image verticalement au centre du conteneur */
     transform: translateY(-50%); /* Ajuste pour centrer parfaitement l'image */
-    width: 100px; /* Taille de l'image */
-    height: 100px; /* Taille de l'image */
+    width: 200px; /* Taille de l'image */
+    height: 200px; /* Taille de l'image */
     border-radius: 50%; /* Bordures arrondies pour l'effet rond */
-    border: 4px solid #17abb3; /* Bordure colorée autour de l'image */
+    border: 8px solid #ffffff; /* Bordure colorée autour de l'image */
     object-fit: cover; /* Assure que l'image est bien redimensionnée sans déformation */
 }
 
@@ -65,18 +75,47 @@ header {
     text-align: left;
     margin-left: 120px; /* Décale le texte pour éviter qu'il soit caché par l'image */
 }
+.text-content h1 {
+    margin-bottom: 1px; /* Réduit l'espace en dessous du h1 */
+}
+
+.text-content p {
+    margin-top: 0; /* Évite un espace inutile au-dessus du p */
+}
+
 
 /* Information de contact */
 .contact-info {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 10px;
-    width: 100%;
-    max-width: 600px;
+    flex-wrap: wrap; /* Permet de passer les éléments sur plusieurs lignes si nécessaire */
+    gap: 5px; /* Réduit davantage l'espace entre les colonnes */
+    justify-content: space-between; /* Distribue l'espace entre les colonnes */
+    margin-top: 15px; /* Ajoute un petit espace avec le haut */
+    margin-right: -190px;
+
 }
 
+/* Un élément de contact */
+.contact-item {
+    display: flex; /* Aligne l'icône et le texte horizontalement */
+    align-items: center; /* Aligne verticalement l'icône et le texte */
+    gap: 5px; /* Réduit encore l'espace entre l'icône et le texte */
+    flex-basis: 40%; /* Réduit la largeur des colonnes pour les rapprocher davantage */
+}
+
+/* Icône des éléments */
+.contact-item i {
+    font-size: 16px; /* Réduit légèrement la taille des icônes */
+    color: white; /* Couleur des icônes */
+    margin-left: -70px;
+
+}
+
+/* Texte des éléments */
+.contact-item span {
+    font-size: 14px; /* Réduit légèrement la taille du texte */
+    color: white; /* Couleur du texte */
+}
 
 /* Conteneur principal */
 .container {
@@ -91,6 +130,21 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
     padding: 20px; /* Ajout de padding pour espacer le contenu */
 }
+.left-column ul {
+    list-style-type: square; /* Définit des puces carrées */
+    padding-left: 20px; /* Espace entre les puces et le contenu */
+}
+
+.left-column ul li {
+    color: #333; /* Couleur du texte */
+}
+
+.left-column ul li::marker {
+    color: #17abb3; /* Couleur bleue pour les puces */
+}
+
+
+
 
 #competences ul, #langues ul {
     list-style-type: none; /* Supprime les puces des listes */
@@ -110,6 +164,14 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
 }
 
+
+.right-column ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Retire le padding par défaut */
+    margin: 0; /* Retire les marges par défaut */
+}
+
+
 /* Pied de page */
 footer {
     width: calc(1160px - 20px); /* Largeur totale moins le padding */
@@ -119,7 +181,6 @@ footer {
     background-color: #17abb3;
     color: white;
 }
-
 
 /* Sections */
 section {
