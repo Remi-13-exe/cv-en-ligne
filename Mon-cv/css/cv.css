@@ -19,14 +19,13 @@ h1, h2 {
     margin: 0; /* Supprime les marges par défaut */
 }
 
-
 h1 {
     font-size: 60px;
-
 }
 
 h2 {
     color: #17abb3; /* Couleur spécifique pour les sous-titres */
+    font-weight: 500; /* Réduit l'épaisseur du texte */
     margin-top: 45px; /* Espace avant le titre */
     border-bottom: 2px solid #e3e3e3; /* Barre fine sous le titre */
     padding-bottom: 5px; /* Espace entre le texte et la barre */
@@ -75,6 +74,7 @@ header p {
     text-align: left;
     margin-left: 120px; /* Décale le texte pour éviter qu'il soit caché par l'image */
 }
+
 .text-content h1 {
     margin-bottom: 1px; /* Réduit l'espace en dessous du h1 */
 }
@@ -82,7 +82,6 @@ header p {
 .text-content p {
     margin-top: 0; /* Évite un espace inutile au-dessus du p */
 }
-
 
 /* Information de contact */
 .contact-info {
@@ -92,7 +91,6 @@ header p {
     justify-content: space-between; /* Distribue l'espace entre les colonnes */
     margin-top: 15px; /* Ajoute un petit espace avec le haut */
     margin-right: -190px;
-
 }
 
 /* Un élément de contact */
@@ -108,7 +106,6 @@ header p {
     font-size: 16px; /* Réduit légèrement la taille des icônes */
     color: white; /* Couleur des icônes */
     margin-left: -70px;
-
 }
 
 /* Texte des éléments */
@@ -125,52 +122,66 @@ header p {
 
 /* Colonne gauche */
 .left-column {
-    width: 30%; /* Largeur de la colonne gauche */
+    width: 25%; /* Largeur de la colonne gauche */
     background-color: #f5f5f5; /* Fond gris clair */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
-    padding: 20px; /* Ajout de padding pour espacer le contenu */
+    padding: 40px; /* Ajout de padding pour espacer le contenu */
 }
+
 .left-column ul {
+    
     list-style-type: square; /* Définit des puces carrées */
-    padding-left: 20px; /* Espace entre les puces et le contenu */
 }
 
 .left-column ul li {
-    color: #333; /* Couleur du texte */
+    margin-left: -30px;  /* Décale l'élément vers la gauche */
+    justify-content: space-between; /* Espace les éléments de gauche et de droite */
 }
 
 .left-column ul li::marker {
     color: #17abb3; /* Couleur bleue pour les puces */
+    font-size: 1.6em;
 }
 
-
-
-
-#competences ul, #langues ul {
-    list-style-type: none; /* Supprime les puces des listes */
+competences ul, langues ul {
     padding: 0; /* Pas de marge intérieure */
-}
-
-.stars {
-    color: #17abb3; /* Couleur des étoiles */
     font-weight: bold; /* Texte en gras */
 }
 
+.language {
+    font-weight: normal; /* Le texte n'est plus en gras */
+}
+
+/* Style des étoiles pour les compétences */
+.stars {
+    color: #17abb3; /* Couleur des étoiles */
+    font-weight: bold; /* Texte en gras */
+    margin-left: auto;
+}
+
+.skill {
+    display: flex
+}
+
+.close-up {
+    padding-left: 50px;
+}
+  
+
+
 /* Colonne droite */
 .right-column {
-    width: 70%; /* Largeur de la colonne droite */
+    width: 75%; /* Largeur de la colonne droite */
     padding: 20px; /* Espacement interne */
     background-color: #ffffff; /* Fond blanc clair */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
 }
-
 
 .right-column ul {
     list-style-type: none; /* Supprime les puces */
     padding: 0; /* Retire le padding par défaut */
     margin: 0; /* Retire les marges par défaut */
 }
-
 
 /* Pied de page */
 footer {
