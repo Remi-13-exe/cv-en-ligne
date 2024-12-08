@@ -20,7 +20,7 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 60px; /* Taille du titre principal */
 }
 
 h2 {
@@ -44,8 +44,14 @@ header {
 }
 
 header p {
-    font-size: 40px;
+    font-size: 40px; /* Taille de texte spécifique pour le paragraphe du header */
 }
+
+header a {
+    color: #ffffff; /* Met le texte en blanc */
+    text-decoration: none; /* Supprime le soulignement */
+}
+
 
 /* Conteneur de l'image et du texte */
 .header-content {
@@ -57,17 +63,28 @@ header p {
 }
 
 /* Image de profil avec positionnement absolu */
+.profile-container {
+    position: relative; /* Permet un positionnement relatif */
+    display: inline-block; /* Conteneur pour l'image */
+}
+
+/* Image de profil */
 .profile-pic {
-    position: absolute; /* Permet de sortir de l'alignement normal et de la déplacer à gauche */
-    margin-left: -200px; /* Déplace l'image vers la gauche du conteneur */
-    top: 50%; /* Positionne l'image verticalement au centre du conteneur */
-    transform: translateY(-50%); /* Ajuste pour centrer parfaitement l'image */
     width: 200px; /* Taille de l'image */
     height: 200px; /* Taille de l'image */
-    border-radius: 50%; /* Bordures arrondies pour l'effet rond */
-    border: 8px solid #ffffff; /* Bordure colorée autour de l'image */
-    object-fit: cover; /* Assure que l'image est bien redimensionnée sans déformation */
+    border-radius: 50%; /* Bordure ronde */
+    border: 8px solid #ffffff; /* Bordure blanche autour de l'image */
+    object-fit: cover; /* Remplissage sans déformation de l'image */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition fluide pour l'effet de zoom et l'ombre */
 }
+
+/* Effet de survol */
+.profile-container:hover .profile-pic {
+    cursor: zoom-in; /* Change le curseur pour une loupe, indiquant que l'image peut être zoomée */
+    transform: scale(1.1); /* Augmente légèrement la taille de l'image au survol */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ajoute une ombre douce autour de l'image */
+}
+
 
 /* Contenu textuel du header */
 .text-content {
@@ -90,7 +107,7 @@ header p {
     gap: 5px; /* Réduit davantage l'espace entre les colonnes */
     justify-content: space-between; /* Distribue l'espace entre les colonnes */
     margin-top: 15px; /* Ajoute un petit espace avec le haut */
-    margin-right: -190px;
+    margin-right: -190px; /* Décale légèrement vers la droite */
 }
 
 /* Un élément de contact */
@@ -105,7 +122,7 @@ header p {
 .contact-item i {
     font-size: 16px; /* Réduit légèrement la taille des icônes */
     color: white; /* Couleur des icônes */
-    margin-left: -70px;
+    margin-left: -70px; /* Décale l'icône vers la gauche */
 }
 
 /* Texte des éléments */
@@ -129,7 +146,6 @@ header p {
 }
 
 .left-column ul {
-    
     list-style-type: square; /* Définit des puces carrées */
 }
 
@@ -140,7 +156,7 @@ header p {
 
 .left-column ul li::marker {
     color: #17abb3; /* Couleur bleue pour les puces */
-    font-size: 1.6em;
+    font-size: 1.6em; /* Augmente la taille des puces */
 }
 
 competences ul, langues ul {
@@ -149,8 +165,7 @@ competences ul, langues ul {
 }
 
 .language {
-    font-weight: normal;
-
+    font-weight: normal; /* Normalise le texte des langues */
 }
 
 /* Style des étoiles pour les compétences */
@@ -162,22 +177,17 @@ competences ul, langues ul {
 
 .skill {
     font-weight: bold;
-    display: flex
-   
-
+    display: flex;
 }
 
 .close-up {
     padding-left: 50px;
-    
 }
-  
+
 .close-up li {
-    
     margin-bottom: 5px; /* Réduit l'espace entre les éléments */
     line-height: 0.7; /* Ajuste l'espacement entre les lignes */
 }
-
 
 
 /* Colonne droite */
@@ -198,14 +208,12 @@ competences ul, langues ul {
     justify-content: space-between; /* Met le texte à gauche et le span à droite */
     align-items: center; /* Centre verticalement */
     font-weight: bold; /* Texte en gras */
-
 }
 
 .right-column ul li span {
     margin-left: auto; /* Pousse le span complètement à droite */
-     color: #17abb3;
-     font-weight: normal; /* Enlève le gras */
-
+    color: #17abb3;
+    font-weight: normal; /* Enlève le gras */
     text-align: right; /* Facultatif : aligne le contenu du span à droite */
 }
 
@@ -215,10 +223,7 @@ competences ul, langues ul {
     margin-bottom: 15px;
     margin-top: -3px;
     font-size: 14px; /* Réduit la taille de la police */
-
-    
 }
-
 
 
 /* Pied de page */
@@ -236,3 +241,43 @@ section {
     margin-bottom: 10px; /* Ajoute un espace entre les sections */
 }
 
+/* Style de base pour les éléments de la liste */
+#stages ul li, 
+#experiences ul li {
+    position: relative; /* Nécessaire pour positionner le trait */
+    padding: 10px 15px; /* Espacement interne pour rendre le fond visible */
+    background-color: #ffffff; /* Couleur de fond par défaut */
+    transition: background-color 0.3s, border-left 0.3s; /* Animation fluide */
+}
+
+/* Style au survol */
+#stages ul li:hover, 
+#experiences ul li:hover {
+    background-color: #f5f5f5; /* Change le fond au survol */
+    border-left: 5px solid #17abb3; /* Ajoute un trait vertical à gauche */
+}
+
+.social-links {
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    justify-content: center; /* Centre les icônes horizontalement */
+    align-items: center; /* Centre les icônes verticalement */
+    gap: 20px; /* Ajoute un espace entre les icônes via Flexbox */
+    margin-top: 20px; /* Ajoute un espace au-dessus de la ligne */
+}
+
+.social-icon {
+    width: 50px; /* Taille fixe pour les icônes */
+    height: 50px;
+    object-fit: cover; /* Assure que l'image est bien ajustée */
+    margin: 0 15px; /* Ajoute une marge horizontale supplémentaire */
+    background-color: #ffffff; /* Ajoute un fond blanc */
+    border-radius: 10%; /* Facultatif : arrondit légèrement les coins */
+    padding: 5px; /* Ajoute un espace interne pour éviter que l'image touche directement les bords */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajoute une ombre douce pour un effet de relief */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animation fluide pour le survol */
+}
+
+.social-icon:hover {
+    opacity: 0.7; /* Réduit l'opacité au survol */
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+}
